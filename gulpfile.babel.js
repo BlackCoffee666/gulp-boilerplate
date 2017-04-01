@@ -1,8 +1,9 @@
 'use strict';
 
 import fs from 'fs'
-import path from 'path'
 import gulp from 'gulp'
+import path from 'path'
+import del from 'del'
 import colors from 'colors'
 
 import sass from 'gulp-sass'
@@ -19,6 +20,7 @@ import pug from 'gulp-pug'
 import moduleImporter from 'sass-module-importer'
 import browserify from 'gulp-browserify'
 
+
 const dirs = { src: 'src', dest: 'build' };
 
 const plugins = {
@@ -29,13 +31,9 @@ const plugins = {
 };
 
 const paths = {
-  html: {
-    src: `${dirs.src}/**/*.html`,
-    dest: `${dirs.dest}/`,
-  },
   pug: {
-    src: `${dirs.src}/views/*.pug`,
-    dest: `${dirs.dest}`,
+    src: `${dirs.src}/views/**/*.pug`,
+    dest: `${dirs.dest}/`,
   },
   styles: {
     main: `${dirs.src}/styles/main.scss`,
@@ -61,18 +59,10 @@ const paths = {
   }
 };
 
-gulp.task('html', () => {
-  return gulp.src(paths.html.src)
-    .pipe(gulp.dest(paths.html.dest))
-});
-
 gulp.task('pug', () => {
   return gulp.src(paths.pug.src)
     .pipe(pug({ pretty: true }))
     .pipe(gulp.dest(paths.pug.dest))
-      .on('end', () => {
-          gulp.src(`${paths.pug.dest}/**/*.html`);
-      })
 });
 
 gulp.task('styles', () => {
@@ -122,11 +112,19 @@ gulp.task('vendor', function () {
 });
 
 gulp.task('watch', () => {
-    gulp.watch([paths.html.src], ['html']);
-    gulp.watch([paths.pug.src], ['pug']);
+    gulp.watch([paths.pug.src], ['pug'])
+        .on('change', (event) => {
+            if (event.type === 'deleted') {
+                let filePathFromSrc = path.relative(path.resolve('src'), event.path);
+                let destFilePath = path.resolve('build', filePathFromSrc);
+                del.sync(destFilePath.replace('views\\', '').replace('.pug', '.html'));
+            }
+        });
     gulp.watch([paths.styles.src], ['styles']);
     gulp.watch([paths.scripts.src], ['scripts']);
-    gulp.watch([paths.images.src], ['images']);
+    gulp.watch(paths.images.src, () => {
+        gulp.start('images')
+    });
     gulp.watch([paths.fonts.src], ['fonts']);
     watch('./build/**/*.*').pipe(connect.reload());
 });
@@ -138,17 +136,6 @@ gulp.task('connect', () => {
     livereload: true
   })
 });
-
-gulp.task('default', [
-  'html',
-  'styles',
-  'scripts',
-  'images',
-  'fonts',
-  'connect',
-  'vendor',
-  'watch',
-]);
 
 gulp.task('pug-layout', [
   'pug',
