@@ -7,7 +7,7 @@
     "start": "gulp",
     "pug": "gulp pug-layout"
   },
-  "author": "https://github.com/rkolpakov",
+  "author": "https://github.com/rkolpakov && https://github.com/listatt",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.18.2",
@@ -15,7 +15,6 @@
     "babel-preset-es2015": "^6.18.0",
     "babelify": "^7.3.0",
     "colors": "^1.1.2",
-    "slick-carousel": "^1.6.0",
     "eslint": "^3.9.1",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
@@ -26,13 +25,15 @@
     "gulp-connect": "^5.0.0",
     "gulp-imagemin": "^3.1.1",
     "gulp-jscs": "^4.0.0",
+    "gulp-notify": "^3.0.0",
     "gulp-pug": "^3.2.0",
     "gulp-sass": "^2.3.2",
     "gulp-uglify": "^2.0.0",
     "gulp-watch": "^4.3.10",
     "jquery": "^3.1.1",
     "normalize-scss": "^6.0.0",
-    "sass-module-importer": "^1.4.0"
+    "sass-module-importer": "^1.4.0",
+    "slick-carousel": "^1.6.0"
   },
   "browserify": {
     "transform": [

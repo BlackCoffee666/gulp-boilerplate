@@ -14,6 +14,7 @@ import connect from 'gulp-connect'
 import jscs from 'gulp-jscs'
 import uglify from 'gulp-uglify'
 import babel from 'gulp-babel'
+import notify from 'gulp-notify'
 import imagemin from 'gulp-imagemin'
 import watch from 'gulp-watch'
 import pug from 'gulp-pug'
@@ -62,6 +63,9 @@ const paths = {
 gulp.task('pug', () => {
   return gulp.src(paths.pug.src)
     .pipe(pug({ pretty: true }))
+		.on('error', notify.onError(function (error) {
+			return 'An error occurred while compiling pug.\nLook in the console for details.\n' + error;
+		}))
     .pipe(gulp.dest(paths.pug.dest))
 });
 
