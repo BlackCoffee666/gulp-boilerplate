@@ -137,12 +137,6 @@ gulp.task('files', () => {
 		.pipe(gulp.dest(paths.svg.dest))
 });
 
-// gulp.task('vendor', function () {
-// 	gulp.src(plugins.js)
-//     .pipe(concat('vendor.js'))
-//     .pipe(gulp.dest(paths.scripts.dest));
-// });
-
 gulp.task('watch', () => {
     gulp.watch([paths.pug.src], ['pug'])
         .on('change', (event) => {
@@ -177,7 +171,7 @@ gulp.task('pug-layout', [
   'images',
   'fonts',
   'connect',
-  'watch',
-  'svg',
-  'files'
+	'svg',
+	'files',
+  'watch'
 ]);
