@@ -1,17 +1,14 @@
 'use strict';
 
-import fs from 'fs'
 import gulp from 'gulp'
 import path from 'path'
 import del from 'del'
-import colors from 'colors'
 
 import sass from 'gulp-sass'
 import autoprefixer from 'gulp-autoprefixer'
 import cleanCss from 'gulp-clean-css'
 import concat from 'gulp-concat'
 import connect from 'gulp-connect'
-import jscs from 'gulp-jscs'
 import uglify from 'gulp-uglify'
 import babel from 'gulp-babel'
 import notify from 'gulp-notify'

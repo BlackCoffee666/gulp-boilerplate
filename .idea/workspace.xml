@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a69f1bf4-f5e6-47e4-b42a-638bd64681db" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/styles/modules/_main-index.scss" afterPath="$PROJECT_DIR$/src/styles/modules/_main-index.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.babel.js" afterPath="$PROJECT_DIR$/gulpfile.babel.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,7 +19,18 @@
     <favorites_list name="simple-html5-boilerplate" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="gulpfile.babel.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gulpfile.babel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -87,7 +98,6 @@
         <option value="$PROJECT_DIR$/build/scripts/4dcd28780c0e600aeb00.js" />
         <option value="$PROJECT_DIR$/src/scripts/modules/example1.js" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/gulpfile.babel.js" />
         <option value="$PROJECT_DIR$/build/svg/sprite.svg" />
         <option value="$PROJECT_DIR$/src/views/templates/layout.pug" />
         <option value="$PROJECT_DIR$/src/scripts/app.js" />
@@ -97,6 +107,7 @@
         <option value="$PROJECT_DIR$/src/styles/modules/adaptive/mobile/tablet/_tablet-index.scss" />
         <option value="$PROJECT_DIR$/src/styles/modules/adaptive/mobile/phone/_phone-index.scss" />
         <option value="$PROJECT_DIR$/src/styles/modules/_main-index.scss" />
+        <option value="$PROJECT_DIR$/gulpfile.babel.js" />
       </list>
     </option>
   </component>
@@ -777,12 +788,12 @@
       <workItem from="1491064092005" duration="2322000" />
       <workItem from="1491085214383" duration="2278000" />
       <workItem from="1503304809552" duration="1481000" />
-      <workItem from="1509790626613" duration="9356000" />
+      <workItem from="1509790626613" duration="9923000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30601000" />
+    <option name="totallyTimeSpent" value="31168000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -795,9 +806,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="200" y="28" width="1427" height="778" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29712683" sideWeight="0.8110014" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29712683" sideWeight="0.8110014" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24918744" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -946,16 +958,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gulpfile.babel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="176" column="3" lean-forward="true" selection-start-line="176" selection-start-column="3" selection-end-line="176" selection-end-column="3" />
-          <folding>
-            <element signature="e#15#34#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1147,6 +1149,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
           <caret line="4" column="34" lean-forward="true" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gulpfile.babel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
       </provider>
