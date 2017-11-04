@@ -25,15 +25,9 @@ import svgmin from 'gulp-svgmin';
 import rename from 'gulp-rename';
 import svgstore from 'gulp-svgstore';
 
+import webpack from 'gulp-webpack';
 
 const dirs = { src: 'src', dest: 'build' };
-
-const plugins = {
-  js: [
-    'node_modules/jquery/dist/jquery.min.js',
-    'node_modules/slick-carousel/slick/slick.min.js'
-  ]
-};
 
 const paths = {
   pug: {
@@ -95,14 +89,22 @@ gulp.task('styles', () => {
 
 gulp.task('scripts', () => {
   return gulp.src(paths.scripts.main)
-    .pipe(browserify({ insertGlobals : true }))
-    .on('error', (err) => {
-      console.log(`Error in module ${err.plugin}`);
-      console.log(err.message.red.underline)
-    })
-    .pipe(concat('app.js'))
-    .pipe(babel({compact: false, presets: ['es2015']}))
-    .pipe(uglify())
+		.pipe(webpack({
+			watch: true,
+			module: {
+			  loaders: [
+					{
+					  test: /\.js$/,
+						loader: 'babel',
+						query: {
+							presets: ['es2015']
+						},
+						exclude: /node_modules/,
+          },
+				]
+			},
+    }))
+    .pipe(rename("bundle.js"))
     .pipe(gulp.dest(paths.scripts.dest))
 });
 
@@ -125,11 +127,20 @@ gulp.task('svg', () => {
 		.pipe(gulp.dest(paths.svg.dest))
 });
 
-gulp.task('vendor', function () {
-	gulp.src(plugins.js)
-    .pipe(concat('vendor.js'))
-    .pipe(gulp.dest(paths.scripts.dest));
+gulp.task('files', () => {
+	gulp.src(paths.fonts.src)
+		.pipe(gulp.dest(paths.fonts.dest))
+	gulp.src(paths.images.src)
+		.pipe(gulp.dest(paths.images.dest))
+	gulp.src(paths.svg.src)
+		.pipe(gulp.dest(paths.svg.dest))
 });
+
+// gulp.task('vendor', function () {
+// 	gulp.src(plugins.js)
+//     .pipe(concat('vendor.js'))
+//     .pipe(gulp.dest(paths.scripts.dest));
+// });
 
 gulp.task('watch', () => {
     gulp.watch([paths.pug.src], ['pug'])
@@ -165,7 +176,7 @@ gulp.task('pug-layout', [
   'images',
   'fonts',
   'connect',
-  'vendor',
   'watch',
-  'svg'
+  'svg',
+  'files'
 ]);
