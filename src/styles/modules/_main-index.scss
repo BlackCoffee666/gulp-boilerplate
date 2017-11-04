@@ -1,8 +1,4 @@
-body {
-  background: #4db6ac;
-}
+@import "./mixins/_font-face-mixin.scss";
+@import "./adaptive/mobile/mobile-index";
 
-h1 {
-  transition: all .5s ease;
-  background: green;
-}
+@import "./pages/main_page/index";

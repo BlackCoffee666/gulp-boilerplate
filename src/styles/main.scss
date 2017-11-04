@@ -1,6 +1,6 @@
 @import "normalize-scss/sass/_normalize.scss";
 @include normalize();
 
-@import "./mixins/_font-face-mixin.scss";
+@import "modules/mixins/font-face-mixin";
 
-@import "modules/main-index";
+@import "./modules/main-index";
