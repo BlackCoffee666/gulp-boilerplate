@@ -21,6 +21,10 @@ import pug from 'gulp-pug'
 import moduleImporter from 'sass-module-importer'
 import browserify from 'gulp-browserify'
 
+import svgmin from 'gulp-svgmin';
+import rename from 'gulp-rename';
+import svgstore from 'gulp-svgstore';
+
 
 const dirs = { src: 'src', dest: 'build' };
 
@@ -34,12 +38,12 @@ const plugins = {
 const paths = {
   pug: {
     src: `${dirs.src}/views/**/*.pug`,
-    dest: `${dirs.dest}/`,
+    dest: `${dirs.dest}/`
   },
   styles: {
     main: `${dirs.src}/styles/main.scss`,
     src: `${dirs.src}/styles/**/*.{scss, css}`,
-    dest: `${dirs.dest}/styles/`,
+    dest: `${dirs.dest}/styles/`
   },
   scripts: {
     main: `${dirs.src}/scripts/app.js`,
@@ -57,6 +61,10 @@ const paths = {
   vendor: {
     src: `${dirs.src}/vendor/**/*`,
     dest: `${dirs.dest}/vendor/`
+  },
+  svg: {
+    src: `${dirs.src}/svg/**/*.svg`,
+    dest: `${dirs.dest}/svg`
   }
 };
 
@@ -109,6 +117,14 @@ gulp.task('fonts', () => {
     .pipe(gulp.dest(paths.fonts.dest))
 });
 
+gulp.task('svg', () => {
+	return gulp.src('./src/svg/**/*.svg')
+		.pipe(svgmin())
+		.pipe(svgstore())
+		.pipe(rename("sprite.svg"))
+		.pipe(gulp.dest(paths.svg.dest))
+});
+
 gulp.task('vendor', function () {
 	gulp.src(plugins.js)
     .pipe(concat('vendor.js'))
@@ -130,6 +146,7 @@ gulp.task('watch', () => {
         gulp.start('images')
     });
     gulp.watch([paths.fonts.src], ['fonts']);
+	  gulp.watch([paths.svg.src], ['svg']);
     watch('./build/**/*.*').pipe(connect.reload());
 });
 
@@ -150,4 +167,5 @@ gulp.task('pug-layout', [
   'connect',
   'vendor',
   'watch',
+  'svg'
 ]);
