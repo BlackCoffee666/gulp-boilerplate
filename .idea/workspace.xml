@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a69f1bf4-f5e6-47e4-b42a-638bd64681db" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/styles/modules/adaptive/mobile/phone/animation/.gitkeep" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/styles/modules/adaptive/mobile/phone/layout/.gitkeep" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/styles/modules/adaptive/mobile/tablet/animation/.gitkeep" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/styles/modules/adaptive/mobile/tablet/layout/.gitkeep" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/styles/modules/animation/.gitkeep" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/styles/modules/fonts/.gitkeep" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/styles/modules/layout/.gitkeep" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/styles/modules/adaptive/mobile/phone/_phone-index.scss" afterPath="$PROJECT_DIR$/src/styles/modules/adaptive/mobile/phone/_phone-index.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/styles/modules/adaptive/mobile/tablet/_tablet-index.scss" afterPath="$PROJECT_DIR$/src/styles/modules/adaptive/mobile/tablet/_tablet-index.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/styles/modules/_main-index.scss" afterPath="$PROJECT_DIR$/src/styles/modules/_main-index.scss" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,58 +19,7 @@
     <favorites_list name="simple-html5-boilerplate" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="_main-animation.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/styles/modules/animation/_main-animation.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_phone-index.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/styles/modules/adaptive/mobile/phone/_phone-index.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="11" column="37" lean-forward="true" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_mobile-index.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/styles/modules/adaptive/mobile/_mobile-index.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="8" lean-forward="true" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_main-index.scss" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/styles/modules/_main-index.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="3" column="34" lean-forward="true" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_tablet-index.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/styles/modules/adaptive/mobile/tablet/_tablet-index.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="6" column="15" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -153,10 +93,10 @@
         <option value="$PROJECT_DIR$/src/scripts/app.js" />
         <option value="$PROJECT_DIR$/src/views/index.pug" />
         <option value="$PROJECT_DIR$/src/styles/main.scss" />
-        <option value="$PROJECT_DIR$/src/styles/modules/_main-index.scss" />
         <option value="$PROJECT_DIR$/src/styles/modules/adaptive/mobile/_mobile-index.scss" />
         <option value="$PROJECT_DIR$/src/styles/modules/adaptive/mobile/tablet/_tablet-index.scss" />
         <option value="$PROJECT_DIR$/src/styles/modules/adaptive/mobile/phone/_phone-index.scss" />
+        <option value="$PROJECT_DIR$/src/styles/modules/_main-index.scss" />
       </list>
     </option>
   </component>
@@ -837,12 +777,12 @@
       <workItem from="1491064092005" duration="2322000" />
       <workItem from="1491085214383" duration="2278000" />
       <workItem from="1503304809552" duration="1481000" />
-      <workItem from="1509790626613" duration="9222000" />
+      <workItem from="1509790626613" duration="9356000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30467000" />
+    <option name="totallyTimeSpent" value="30601000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1205,8 +1145,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/styles/modules/_main-index.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="3" column="34" lean-forward="true" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
+        <state relative-caret-position="64">
+          <caret line="4" column="34" lean-forward="true" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
           <folding />
         </state>
       </provider>
