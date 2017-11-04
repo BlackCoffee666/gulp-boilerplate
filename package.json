@@ -1,13 +1,13 @@
 {
   "name": "simple-html5-boilerplate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple html5 boilerplate for creating html templates",
   "main": "index.js",
   "scripts": {
     "start": "gulp",
     "pug": "gulp pug-layout"
   },
-  "author": "https://github.com/rkolpakov && https://github.com/listatt",
+  "author": "https://github.com/listatt",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.18.2",

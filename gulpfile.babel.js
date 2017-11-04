@@ -104,6 +104,7 @@ gulp.task('scripts', () => {
 				]
 			},
     }))
+		.pipe(uglify())
     .pipe(rename("bundle.js"))
     .pipe(gulp.dest(paths.scripts.dest))
 });
