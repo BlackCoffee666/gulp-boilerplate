@@ -98,6 +98,10 @@ gulp.task('scripts', () => {
 						},
 						exclude: /node_modules/,
           },
+					{
+						test: /\.json$/,
+						loader: 'json-loader'
+					}
 				]
 			},
     }))
