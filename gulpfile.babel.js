@@ -25,6 +25,8 @@ import svgstore from 'gulp-svgstore';
 
 import webpack from 'webpack-stream';
 
+import through from 'through2';
+
 const dirs = { src: 'src', dest: 'build' };
 
 const paths = {
@@ -69,9 +71,9 @@ gulp.task('styles', () => {
   return gulp.src(paths.styles.main)
     .pipe(sourcemaps.init())
     .pipe(sass({ importer: moduleImporter() }))
-    .on('error', (err) => {
-      console.log(err.toString().red.underline)
-    })
+    .on('error', notify.onError(function (error) {
+			return 'An error occurred while compiling styles.\nLook in the console for details.\n' + error;
+		}))
     .pipe(sass.sync())
     .pipe(concat('main.css'))
     .pipe(cleanCss({compatibility: 'ie8'}))
@@ -85,7 +87,12 @@ gulp.task('styles', () => {
 
 gulp.task('scripts', () => {
   gulp.src(paths.scripts.main)
-    .pipe(webpack(require('./webpack.config.js')))
+    .pipe(webpack({
+      config: require('./webpack.config.js')
+    }))
+    .on('error', notify.onError(function (error) {
+			return 'An error occurred while compiling scripts.\nLook in the console for details.\n' + error;
+		}))
     .pipe(uglify())
     .pipe(rename('bundle.js'))
     .pipe(gulp.dest(paths.scripts.dest))
