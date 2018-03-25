@@ -84,29 +84,10 @@ gulp.task('styles', () => {
 });
 
 gulp.task('scripts', () => {
-  return gulp.src(paths.scripts.main)
-		.pipe(webpack({
-			watch: true,
-			module: {
-			  loaders: [
-					{
-					  test: /\.(js|jsx)$/,
-						loader: 'babel-loader',
-            query: {
-              presets: ['es2015'],
-              plugins: ['transform-function-bind', 'babel-polyfill']
-            },
-						exclude: /node_modules/,
-          },
-					{
-						test: /\.json$/,
-						loader: 'json-loader'
-					}
-				]
-			},
-    }))
-		.pipe(uglify())
-    .pipe(rename("bundle.js"))
+  gulp.src(paths.scripts.main)
+    .pipe(webpack(require('./webpack.config.js')))
+    .pipe(uglify())
+    .pipe(rename('bundle.js'))
     .pipe(gulp.dest(paths.scripts.dest))
 });
 
