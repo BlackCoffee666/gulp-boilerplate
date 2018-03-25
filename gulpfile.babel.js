@@ -10,6 +10,7 @@ import cleanCss from 'gulp-clean-css'
 import concat from 'gulp-concat'
 import connect from 'gulp-connect'
 import uglify from 'gulp-uglify'
+import sourcemaps from 'gulp-sourcemaps'
 import babel from 'gulp-babel'
 import notify from 'gulp-notify'
 import imagemin from 'gulp-imagemin'
@@ -22,7 +23,7 @@ import svgmin from 'gulp-svgmin';
 import rename from 'gulp-rename';
 import svgstore from 'gulp-svgstore';
 
-import webpack from 'gulp-webpack';
+import webpack from 'webpack-stream';
 
 const dirs = { src: 'src', dest: 'build' };
 
@@ -49,10 +50,6 @@ const paths = {
     src: `${dirs.src}/fonts/**/*.{ttf,woff,eof,svg,otf}`,
     dest: `${dirs.dest}/fonts/`
   },
-  vendor: {
-    src: `${dirs.src}/vendor/**/*`,
-    dest: `${dirs.dest}/vendor/`
-  },
   svg: {
     src: `${dirs.src}/svg/**/*.svg`,
     dest: `${dirs.dest}/svg`
@@ -70,6 +67,7 @@ gulp.task('pug', () => {
 
 gulp.task('styles', () => {
   return gulp.src(paths.styles.main)
+    .pipe(sourcemaps.init())
     .pipe(sass({ importer: moduleImporter() }))
     .on('error', (err) => {
       console.log(err.toString().red.underline)
@@ -81,6 +79,7 @@ gulp.task('styles', () => {
       browsers: ['last 15 versions'],
       cascade: false
     }))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest(paths.styles.dest))
 });
 
@@ -91,11 +90,12 @@ gulp.task('scripts', () => {
 			module: {
 			  loaders: [
 					{
-					  test: /\.js$/,
-						loader: 'babel',
-						query: {
-							presets: ['es2015']
-						},
+					  test: /\.(js|jsx)$/,
+						loader: 'babel-loader',
+            query: {
+              presets: ['es2015'],
+              plugins: ['transform-function-bind', 'babel-polyfill']
+            },
 						exclude: /node_modules/,
           },
 					{
